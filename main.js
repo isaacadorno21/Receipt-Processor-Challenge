@@ -18,6 +18,10 @@ const receiptValidator = [
     check('total').isFloat({ min: 0 }),
 ];
 
+app.get('/', (req, res) => {
+    res.send('Hello! My name is Jorge Isaac Adorno. Thanks for checking out my Receipt Processor app. You can POST a JSON receipt to /receipts/process and GET its points from /receipts/{id}/points.')
+  })
+
 // Endpoint: Process Receipts
 app.post('/receipts/process', receiptValidator, (req, res) => {
     // Check for errors in our request
