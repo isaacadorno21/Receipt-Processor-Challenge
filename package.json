@@ -6,6 +6,7 @@
   "author": "Jorge Isaac Adorno <isaacadorno21@gmail.com> (http://linkedin.com/in/isaac-adorno/)",
   "dependencies": {
     "express": "^4.18.2",
+    "express-validator": "^7.0.1",
     "uuid": "^9.0.0"
   }
 }
