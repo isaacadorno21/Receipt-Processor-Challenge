@@ -1,10 +1,12 @@
 const express = require('express');
 const uuid = require('uuid');
 const crypto = require('crypto');
+const path = require('path');
 const { check, validationResult } = require('express-validator');
 const app = express();
 const { calculatePoints } = require('./helpers');
 app.use(express.json());
+app.use(express.static('public'));
 
 const receipts = {};
 const receiptHashes = {};
@@ -19,8 +21,8 @@ const receiptValidator = [
 ];
 
 app.get('/', (req, res) => {
-    res.send('Hello! My name is Jorge Isaac Adorno. Thanks for checking out my Receipt Processor app. You can POST a JSON receipt to /receipts/process and GET its points from /receipts/{id}/points.')
-  })
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Endpoint: Process Receipts
 app.post('/receipts/process', receiptValidator, (req, res) => {
