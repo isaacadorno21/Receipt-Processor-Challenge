@@ -131,7 +131,7 @@ You can run the tests using Jest:
 
 ## Docker
 
-The application can be built and run using Docker.
+The application can be built and run using Docker. You can install Docker from [their website](https://www.docker.com).
 
 1.  Build the Docker image:
         
