@@ -1,0 +1,11 @@
+{
+  "name": "receipt-processor-challenge",
+  "version": "1.0.0",
+  "description": "Take Home Exercise for Fetch",
+  "main": "main.js",
+  "author": "Jorge Isaac Adorno <isaacadorno21@gmail.com> (http://linkedin.com/in/isaac-adorno/)",
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  }
+}
