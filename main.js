@@ -3,7 +3,7 @@ const uuid = require('uuid');
 const crypto = require('crypto');
 const { check, validationResult } = require('express-validator');
 const app = express();
-const calculatePoints = require('./helpers');
+const { calculatePoints } = require('./helpers');
 app.use(express.json());
 
 const receipts = {};

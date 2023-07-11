@@ -11,19 +11,23 @@
  * - 6 points if the day in the purchase date is odd.
  * - 10 points if the time of purchase is after 2:00pm and before 4:00pm.
  * 
- * @param {*} receipt The receipt provided by the user
+ * @param {*} receipt The receipt provided by the user in JSON format
  * @returns Number of points that will be awarded to the receipt
  */
 function calculatePoints(receipt) {
-    let points = 0;
-    points += calculateRetailerPoints(receipt.retailer);
-    points += calculateRoundDollarPoints(receipt.total);
-    points += calculateMultiplePoints(receipt.total);
-    points += calculateItemsPoints(receipt.items);
-    points += calculateDescriptionPoints(receipt.items);
-    points += calculateDatePoints(receipt.purchaseDate);
-    points += calculateTimePoints(receipt.purchaseTime);
-    return points;
+    try {
+        let points = 0;
+        points += calculateRetailerPoints(receipt.retailer);
+        points += calculateRoundDollarPoints(receipt.total);
+        points += calculateMultiplePoints(receipt.total);
+        points += calculateItemsPoints(receipt.items);
+        points += calculateDescriptionPoints(receipt.items);
+        points += calculateDatePoints(receipt.purchaseDate);
+        points += calculateTimePoints(receipt.purchaseTime);
+        return points;
+    } catch(e) {
+        return 0;
+    }
 }
 
 /**
@@ -110,4 +114,13 @@ function calculateTimePoints(purchaseTime) {
     return (time[0] >= 14 && time[0] < 16) ? 10 : 0;
 }
 
-module.exports = calculatePoints;
+module.exports = {
+    calculatePoints,
+    calculateRetailerPoints,
+    calculateRoundDollarPoints,
+    calculateMultiplePoints,
+    calculateItemsPoints,
+    calculateDescriptionPoints,
+    calculateDatePoints,
+    calculateTimePoints
+};
