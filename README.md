@@ -93,7 +93,7 @@ Breakdown:
 
 To run this project locally, ensure you have the following installed:
 
--   [Node.js](https://nodejs.org/en/download/) version 18.6.1
+-   [Node.js](https://nodejs.org/en/download/) version 18.16.1
 -   [npm](https://www.npmjs.com/get-npm) (comes with Node.js)
 -   [Docker](https://docs.docker.com/get-docker/)
 
